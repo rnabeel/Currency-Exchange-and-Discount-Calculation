@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "59461947-1c00-4fbb-a6e6-231007a865fe",
+		"name": "Currency Exchange and Discount Calculation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20031391"
+	},
+	"item": [
+		{
+			"name": "Employee - 30% discount + Flat",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"EMPLOYEE\",\n  \"customerSince\": \"2022-01-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"EUR\",\n  \"items\": [\n    {\n      \"name\": \"TV\",\n      \"category\": \"OTHER\",\n      \"price\": 1000\n    },\n    {\n      \"name\": \"Bread\",\n      \"category\": \"GROCERY\",\n      \"price\": 100\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Affiliate - 10% discount + Flat",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"AFFILIATE\",\n  \"customerSince\": \"2022-01-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"INR\",\n  \"items\": [\n    {\n      \"name\": \"Monitor\",\n      \"category\": \"OTHER\",\n      \"price\": 300\n    },\n    {\n      \"name\": \"Eggs\",\n      \"category\": \"GROCERY\",\n      \"price\": 50\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loyal Customer - 5% discount + Flat",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"CUSTOMER\",\n  \"customerSince\": \"2020-01-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"PKR\",\n  \"items\": [\n    {\n      \"name\": \"Microwave\",\n      \"category\": \"OTHER\",\n      \"price\": 200\n    },\n    {\n      \"name\": \"Milk\",\n      \"category\": \"GROCERY\",\n      \"price\": 50\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Customer - Flat only",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"CUSTOMER\",\n  \"customerSince\": \"2024-01-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"GBP\",\n  \"items\": [\n    {\n      \"name\": \"Blender\",\n      \"category\": \"OTHER\",\n      \"price\": 250\n    },\n    {\n      \"name\": \"Flour\",\n      \"category\": \"GROCERY\",\n      \"price\": 50\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Groceries Only - Flat only if > $100",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"EMPLOYEE\",\n  \"customerSince\": \"2019-01-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"USD\",\n  \"items\": [\n    {\n      \"name\": \"Rice\",\n      \"category\": \"GROCERY\",\n      \"price\": 60\n    },\n    {\n      \"name\": \"Vegetables\",\n      \"category\": \"GROCERY\",\n      \"price\": 50\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Discount - Bill < $100",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userType\": \"AFFILIATE\",\n  \"customerSince\": \"2021-06-01\",\n  \"originalCurrency\": \"USD\",\n  \"targetCurrency\": \"USD\",\n  \"items\": [\n    {\n      \"name\": \"Notebook\",\n      \"category\": \"OTHER\",\n      \"price\": 40\n    },\n    {\n      \"name\": \"Pen\",\n      \"category\": \"GROCERY\",\n      \"price\": 10\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
